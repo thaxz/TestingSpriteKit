@@ -6,3 +6,21 @@
 //
 
 import Foundation
+import SpriteKit
+
+class FruitManager {
+    
+    static let shared = FruitManager()
+    private init() {}
+    
+     let screen = UIScreen.main.bounds
+    
+     func createRandomFruit() -> SKSpriteNode {
+        let newFruit = SKSpriteNode(imageNamed: "kiwi" )
+        newFruit.position = CGPoint(x: screen.width / 2, y: screen.height - 100)
+        newFruit.setScale(0.5)
+        return newFruit
+    }
+    
+    
+}
