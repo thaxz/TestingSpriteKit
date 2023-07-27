@@ -10,6 +10,13 @@ import SpriteKit
 
 class GameScene: SKScene {
     
+   
+    
+}
+
+// MARK: - Touches
+extension GameScene {
+    
     // When start touching
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -24,11 +31,5 @@ class GameScene: SKScene {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
     }
-    
-}
-
-extension GameScene {
-    
-    
     
 }
