@@ -17,10 +17,20 @@ class GameScene: SKScene {
     
     // Right when the scene is presented
     override func didMove(to view: SKView) {
+        // Adding physics to the whole screen, like a box
+        self.physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         makeUI()
         makeScore()
         makeNowFruit()
     }
+    
+    
+    
+}
+
+// MARK: Build UI
+
+extension GameScene {
     
     func makeUI(){
         // Creating background
@@ -30,10 +40,18 @@ class GameScene: SKScene {
         // Just like UIKit, adding to view hierarchy
         addChild(background)
         // Creating and configuring floor
-        let floor = SKSpriteNode(color: UIColor.theme.floor, size: CGSize(width: screen.width, height: screen.height / 5))
-        floor.anchorPoint = CGPoint.zero
-        floor.position = CGPoint.zero
-        addChild(floor)
+        let solid = SKSpriteNode(color: UIColor.theme.solid, size: CGSize(width: screen.width, height: screen.height / 5))
+        solid.anchorPoint = CGPoint.zero
+        solid.position = CGPoint.zero
+        addChild(solid)
+        let ground = SKSpriteNode(color: UIColor.theme.floor, size: CGSize(width: screen.width, height: 10))
+        ground.anchorPoint = CGPoint.zero
+        ground.position = CGPoint(x: 0, y: screen.height/5)
+        ground.physicsBody = SKPhysicsBody(
+            edgeFrom: CGPoint(x: 0, y: ground.size.height),
+            to: CGPoint(x: ground.size.width, y: ground.size.height)
+        )
+        addChild(ground)
     }
     
     func makeScore(){
@@ -47,6 +65,8 @@ class GameScene: SKScene {
         nowFruit = SKSpriteNode(imageNamed: "grape" )
         nowFruit.position = CGPoint(x: screen.width / 2, y: screen.height - 100)
         nowFruit.setScale(0.5)
+        // Adding physics
+        nowFruit.physicsBody = SKPhysicsBody(circleOfRadius: nowFruit.size.height / 2)
         addChild(nowFruit)
     }
     

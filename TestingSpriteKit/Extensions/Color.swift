@@ -17,6 +17,6 @@ extension UIColor {
 struct ColorTheme {
     
     let background = UIColor(named: "backgroundColor")!
+    let solid = UIColor(named: "solidColor")!
     let floor = UIColor(named: "floorColor")!
-    
 }
