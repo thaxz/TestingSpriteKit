@@ -24,6 +24,7 @@ extension GameScene {
             .run {
                 // Adding physics
                 self.nowFruit.physicsBody = SKPhysicsBody(circleOfRadius: self.nowFruit.size.height / 2)
+                self.nowFruit.physicsBody?.categoryBitMask = 
             },
                 .wait(forDuration: 1),
             .run {
