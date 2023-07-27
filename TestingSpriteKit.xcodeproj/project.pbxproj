@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E92C37092A72D12B00295BAB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92C37082A72D12B00295BAB /* GameScene.swift */; };
-		E92C370B2A72D26600295BAB /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E92C370A2A72D26600295BAB /* GameScene.sks */; };
 		E92C37102A72D2A800295BAB /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E92C370D2A72D2A800295BAB /* win.mp3 */; };
 		E92C37112A72D2A800295BAB /* falldown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E92C370E2A72D2A800295BAB /* falldown.mp3 */; };
 		E92C37122A72D2A800295BAB /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E92C370F2A72D2A800295BAB /* bomb.mp3 */; };
@@ -20,7 +19,6 @@
 
 /* Begin PBXFileReference section */
 		E92C37082A72D12B00295BAB /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		E92C370A2A72D26600295BAB /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		E92C370D2A72D2A800295BAB /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = win.mp3; sourceTree = "<group>"; };
 		E92C370E2A72D2A800295BAB /* falldown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = falldown.mp3; sourceTree = "<group>"; };
 		E92C370F2A72D2A800295BAB /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
@@ -56,7 +54,6 @@
 			isa = PBXGroup;
 			children = (
 				E92C37082A72D12B00295BAB /* GameScene.swift */,
-				E92C370A2A72D26600295BAB /* GameScene.sks */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -157,7 +154,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9BFDE502A71BD18009743F2 /* Preview Assets.xcassets in Resources */,
-				E92C370B2A72D26600295BAB /* GameScene.sks in Resources */,
 				E92C37122A72D2A800295BAB /* bomb.mp3 in Resources */,
 				E9BFDE4D2A71BD18009743F2 /* Assets.xcassets in Resources */,
 				E92C37102A72D2A800295BAB /* win.mp3 in Resources */,

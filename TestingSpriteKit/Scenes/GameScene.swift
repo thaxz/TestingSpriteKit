@@ -10,7 +10,15 @@ import SpriteKit
 
 class GameScene: SKScene {
     
-   
+    // Right when the scene is presented
+    override func didMove(to view: SKView) {
+        // Creating background
+        let background = SKSpriteNode(color: UIColor(named: "backgroundColor")!, size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        background.anchorPoint = CGPoint.zero
+        background.position = CGPoint.zero
+        // Just like UIKit, adding to view hierarchy
+        addChild(background)
+    }
     
 }
 
