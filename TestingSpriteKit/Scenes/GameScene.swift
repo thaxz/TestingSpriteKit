@@ -18,6 +18,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     // Right when the scene is presented
     override func didMove(to view: SKView) {
+        view.showsFPS = true
+        view.showsNodeCount = true
         // Adding physics to the whole screen, like a box
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         self.physicsWorld.contactDelegate = self

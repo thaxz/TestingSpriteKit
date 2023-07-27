@@ -20,8 +20,25 @@ extension GameScene {
            let fruitBit = fruit.bitmask | fruit.bitmask
             // if it's a collision, the fruit disappears
             if fruitBit == collision {
-                contact.bodyA.node?.run(.fadeOut(withDuration: 0.1))
-                contact.bodyB.node?.run(.fadeOut(withDuration: 0.1))
+                let nodeA = contact.bodyA.node!
+                let nodeB = contact.bodyB.node!
+                
+                    run(.sequence([
+                        .run {
+                            nodeA.run(.fadeOut(withDuration: 0.1))
+                            nodeB.run(.fadeOut(withDuration: 0.1))
+                        },
+                        .run {
+                            nodeA.removeFromParent()
+                            nodeB.removeFromParent()
+                        },
+                        .run {
+                            let fruit = FruitManager.shared.createRandomFruit()
+                        }
+                    
+                    ]))
+                
+                
             }
         }
     }
