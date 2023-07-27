@@ -9,13 +9,16 @@ import SwiftUI
 import SpriteKit
 
 class GameScene: SKScene {
-    var nowFruit: SKSpriteNode!
+    
+    var nowFruit: SKSpriteNode = SKSpriteNode()
+    var scoreNode: SKSpriteNode = SKSpriteNode()
     
     let screen = UIScreen.main.bounds
     
     // Right when the scene is presented
     override func didMove(to view: SKView) {
-       makeUI()
+        makeUI()
+        makeScore()
         makeNowFruit()
     }
     
@@ -31,6 +34,13 @@ class GameScene: SKScene {
         floor.anchorPoint = CGPoint.zero
         floor.position = CGPoint.zero
         addChild(floor)
+    }
+    
+    func makeScore(){
+        scoreNode = SKSpriteNode(imageNamed: "number/0")
+        scoreNode.position = CGPoint.init(x: 50, y: screen.height - 100)
+        scoreNode.setScale(0.8)
+        addChild(scoreNode)
     }
     
     func makeNowFruit(){
