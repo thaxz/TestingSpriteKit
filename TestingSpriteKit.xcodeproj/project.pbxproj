@@ -12,7 +12,7 @@
 		E92C37112A72D2A800295BAB /* falldown.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E92C370E2A72D2A800295BAB /* falldown.mp3 */; };
 		E92C37122A72D2A800295BAB /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E92C370F2A72D2A800295BAB /* bomb.mp3 */; };
 		E92C37162A72D5EC00295BAB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92C37152A72D5EC00295BAB /* Color.swift */; };
-		E92C37182A72E11300295BAB /* FruitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92C37172A72E11300295BAB /* FruitManager.swift */; };
+		E92C37182A72E11300295BAB /* FruitUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92C37172A72E11300295BAB /* FruitUtil.swift */; };
 		E92C371B2A72E37300295BAB /* GameScene+MakeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92C371A2A72E37300295BAB /* GameScene+MakeUI.swift */; };
 		E92C371D2A72E3AA00295BAB /* GameScene+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92C371C2A72E3AA00295BAB /* GameScene+Touches.swift */; };
 		E92C37202A72E4FD00295BAB /* FruitTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92C371F2A72E4FD00295BAB /* FruitTexture.swift */; };
@@ -29,7 +29,7 @@
 		E92C370E2A72D2A800295BAB /* falldown.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = falldown.mp3; sourceTree = "<group>"; };
 		E92C370F2A72D2A800295BAB /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
 		E92C37152A72D5EC00295BAB /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		E92C37172A72E11300295BAB /* FruitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitManager.swift; sourceTree = "<group>"; };
+		E92C37172A72E11300295BAB /* FruitUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitUtil.swift; sourceTree = "<group>"; };
 		E92C371A2A72E37300295BAB /* GameScene+MakeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+MakeUI.swift"; sourceTree = "<group>"; };
 		E92C371C2A72E3AA00295BAB /* GameScene+Touches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GameScene+Touches.swift"; sourceTree = "<group>"; };
 		E92C371F2A72E4FD00295BAB /* FruitTexture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitTexture.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		E92C37192A72E11A00295BAB /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				E92C37172A72E11300295BAB /* FruitManager.swift */,
+				E92C37172A72E11300295BAB /* FruitUtil.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -216,7 +216,7 @@
 				E92C37222A72E9B300295BAB /* GameScene+Collisions.swift in Sources */,
 				E92C371D2A72E3AA00295BAB /* GameScene+Touches.swift in Sources */,
 				E92C371B2A72E37300295BAB /* GameScene+MakeUI.swift in Sources */,
-				E92C37182A72E11300295BAB /* FruitManager.swift in Sources */,
+				E92C37182A72E11300295BAB /* FruitUtil.swift in Sources */,
 				E9BFDE4B2A71BD17009743F2 /* ContentView.swift in Sources */,
 				E9BFDE492A71BD17009743F2 /* TestingSpriteKitApp.swift in Sources */,
 			);

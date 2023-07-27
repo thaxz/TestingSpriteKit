@@ -52,10 +52,10 @@ extension GameScene {
     
     func generateNewFruitFromPosition(position: CGPoint){
         // setting new fruit
-        let fruit = FruitManager.shared.createRandomFruit()
+        let fruit = fruitUtil.createRandomFruit()
         fruit.position = position
         fruit.physicsBody = SKPhysicsBody(circleOfRadius: fruit.size.height/2)
-        let bitmask = FruitManager.shared.getFruitTexture(by: fruit.name!).bitmask
+        let bitmask = fruitUtil.getFruitTexture(by: fruit.name!).bitmask
         fruit.physicsBody?.categoryBitMask = bitmask
         fruit.physicsBody?.contactTestBitMask = bitmask
         addChild(fruit)

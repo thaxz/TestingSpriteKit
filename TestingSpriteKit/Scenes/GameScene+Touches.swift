@@ -24,7 +24,7 @@ extension GameScene {
             .run {
                 // Adding physics
                 self.nowFruit.physicsBody = SKPhysicsBody(circleOfRadius: self.nowFruit.size.height / 2)
-                let bitmask = FruitManager.shared.getFruitTexture(by: self.nowFruit.name!).bitmask
+                let bitmask = self.fruitUtil.getFruitTexture(by: self.nowFruit.name!).bitmask
                 
                 self.nowFruit.physicsBody?.categoryBitMask = bitmask
                 self.nowFruit.physicsBody?.contactTestBitMask = bitmask
@@ -36,7 +36,7 @@ extension GameScene {
                 // Adding to the array of fallenfruits
                 self.groundFruits.append(self.nowFruit)
                 // Creating a random fruit
-                self.nowFruit = FruitManager.shared.createRandomFruit()
+                self.nowFruit = self.fruitUtil.createRandomFruit()
                 self.addChild(self.nowFruit)
                 self.nowFruit.setScale(0)
                 self.nowFruit.run(.scale(to: 0.5, duration: 0.2))

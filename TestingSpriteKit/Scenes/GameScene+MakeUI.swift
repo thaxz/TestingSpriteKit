@@ -42,7 +42,7 @@ extension GameScene {
     }
     
     func makeNowFruit(){
-        nowFruit = FruitManager.shared.createRandomFruit()
+        nowFruit = fruitUtil.createRandomFruit()
         addChild(nowFruit)
     }
     

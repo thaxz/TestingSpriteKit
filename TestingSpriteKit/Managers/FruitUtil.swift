@@ -8,10 +8,7 @@
 import Foundation
 import SpriteKit
 
-class FruitManager {
-    
-    static let shared = FruitManager()
-    private init() {}
+class FruitUtil {
     
     private var randomCount = 0
     

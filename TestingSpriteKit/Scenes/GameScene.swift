@@ -14,6 +14,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreNode: SKSpriteNode = SKSpriteNode()
     var groundFruits: [SKSpriteNode] = []
     
+    var fruitUtil: FruitUtil!
+    
     let screen = UIScreen.main.bounds
     
     // Right when the scene is presented
@@ -23,6 +25,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         // Adding physics to the whole screen, like a box
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
         self.physicsWorld.contactDelegate = self
+        fruitUtil = FruitUtil()
         makeUI()
         makeScore()
         makeNowFruit()
