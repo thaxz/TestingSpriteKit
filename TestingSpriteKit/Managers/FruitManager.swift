@@ -22,5 +22,8 @@ class FruitManager {
         return newFruit
     }
     
+    func getFruitTexture(by name: String) -> FruitTexture {
+        FruitTexture.allCases.first{$0.name == name}!
+    }
     
 }

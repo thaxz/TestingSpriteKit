@@ -8,9 +8,9 @@
 import SwiftUI
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: SKScene, SKPhysicsContactDelegate {
     
-    var nowFruit: SKSpriteNode = SKSpriteNode()
+    var nowFruit: SKSpriteNode!
     var scoreNode: SKSpriteNode = SKSpriteNode()
     var groundFruits: [SKSpriteNode] = []
     
@@ -20,6 +20,7 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         // Adding physics to the whole screen, like a box
         self.physicsBody = SKPhysicsBody(edgeLoopFrom: frame)
+        self.physicsWorld.contactDelegate = self
         makeUI()
         makeScore()
         makeNowFruit()

@@ -7,8 +7,7 @@
 
 import Foundation
 
-enum Fruit: String {
-    
+enum FruitTexture: String, CaseIterable {
     case cherry = "cherry"
     case cocount = "cocount"
     case grape = "grape"
@@ -20,6 +19,7 @@ enum Fruit: String {
     case pineapple = "pineapple"
     case tomato = "tomato"
     case watermelon = "watermelon"
+    
     
     var name: String {
         rawValue
