@@ -5,17 +5,20 @@
 //  Created by thaxz on 26/07/23.
 //
 
+import SpriteKit
 import SwiftUI
 
 struct ContentView: View {
+    // Configurating scene
+    var scene: SKScene {
+        let scene = SKScene()
+        scene.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        return scene
+    }
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+       // Presenting game scene
+        SpriteView(scene: scene)
+            .ignoresSafeArea()
     }
 }
 
