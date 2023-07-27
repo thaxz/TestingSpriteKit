@@ -42,10 +42,7 @@ extension GameScene {
     }
     
     func makeNowFruit(){
-        nowFruit = SKSpriteNode(imageNamed: "grape" )
-        nowFruit.position = CGPoint(x: screen.width / 2, y: screen.height - 100)
-        nowFruit.setScale(0.5)
-       
+        nowFruit = FruitManager.shared.createRandomFruit()
         addChild(nowFruit)
     }
     

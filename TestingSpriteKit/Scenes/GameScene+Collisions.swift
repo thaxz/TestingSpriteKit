@@ -58,6 +58,10 @@ extension GameScene {
         let bitmask = FruitManager.shared.getFruitTexture(by: fruit.name!).bitmask
         fruit.physicsBody?.categoryBitMask = bitmask
         fruit.physicsBody?.contactTestBitMask = bitmask
+        addChild(fruit)
+        //animation
+        fruit.setScale(0)
+        fruit.run(.scale(to: 0.5, duration: 0.3))
     }
     
     // When the contact ends
