@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E92C37092A72D12B00295BAB /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92C37082A72D12B00295BAB /* GameScene.swift */; };
 		E9BFDE492A71BD17009743F2 /* TestingSpriteKitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BFDE482A71BD17009743F2 /* TestingSpriteKitApp.swift */; };
 		E9BFDE4B2A71BD17009743F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9BFDE4A2A71BD17009743F2 /* ContentView.swift */; };
 		E9BFDE4D2A71BD18009743F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9BFDE4C2A71BD18009743F2 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E92C37082A72D12B00295BAB /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		E9BFDE452A71BD17009743F2 /* TestingSpriteKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingSpriteKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9BFDE482A71BD17009743F2 /* TestingSpriteKitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingSpriteKitApp.swift; sourceTree = "<group>"; };
 		E9BFDE4A2A71BD17009743F2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 				E9BFDE4A2A71BD17009743F2 /* ContentView.swift */,
 				E9BFDE4C2A71BD18009743F2 /* Assets.xcassets */,
 				E9BFDE4E2A71BD18009743F2 /* Preview Content */,
+				E92C37082A72D12B00295BAB /* GameScene.swift */,
 			);
 			path = TestingSpriteKit;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E92C37092A72D12B00295BAB /* GameScene.swift in Sources */,
 				E9BFDE4B2A71BD17009743F2 /* ContentView.swift in Sources */,
 				E9BFDE492A71BD17009743F2 /* TestingSpriteKitApp.swift in Sources */,
 			);

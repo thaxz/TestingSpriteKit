@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
     // Configurating scene
     var scene: SKScene {
-        let scene = SKScene()
+        let scene = GameScene()
         scene.size = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
         return scene
     }
