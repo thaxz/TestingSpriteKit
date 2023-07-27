@@ -52,6 +52,15 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		E92C37132A72D2D900295BAB /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E92C37082A72D12B00295BAB /* GameScene.swift */,
+				E92C370A2A72D26600295BAB /* GameScene.sks */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		E9BFDE3C2A71BD17009743F2 = {
 			isa = PBXGroup;
 			children = (
@@ -71,13 +80,12 @@
 		E9BFDE472A71BD17009743F2 /* TestingSpriteKit */ = {
 			isa = PBXGroup;
 			children = (
+				E9BFDE4C2A71BD18009743F2 /* Assets.xcassets */,
 				E92C370C2A72D2A800295BAB /* Sounds */,
+				E92C37132A72D2D900295BAB /* Scenes */,
 				E9BFDE482A71BD17009743F2 /* TestingSpriteKitApp.swift */,
 				E9BFDE4A2A71BD17009743F2 /* ContentView.swift */,
-				E9BFDE4C2A71BD18009743F2 /* Assets.xcassets */,
 				E9BFDE4E2A71BD18009743F2 /* Preview Content */,
-				E92C37082A72D12B00295BAB /* GameScene.swift */,
-				E92C370A2A72D26600295BAB /* GameScene.sks */,
 			);
 			path = TestingSpriteKit;
 			sourceTree = "<group>";
