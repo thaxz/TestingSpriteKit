@@ -16,12 +16,18 @@ extension GameScene {
     func didBegin(_ contact: SKPhysicsContact) {
         // Setting every collision
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        let contactPoint = contact.bodyA.node?.position.x
         for fruit in FruitTexture.allCases {
            let fruitBit = fruit.bitmask | fruit.bitmask
             // if it's a collision, the fruit disappears
             if fruitBit == collision {
                 let nodeA = contact.bodyA.node!
                 let nodeB = contact.bodyB.node!
+                
+               let newFruitPosition = CGPoint(
+                x: (nodeA.position.x + nodeB.position.x) / 2,
+                y: (nodeA.position.y + nodeB.position.y) / 2
+                )
                 
                     run(.sequence([
                         .run {
@@ -33,7 +39,8 @@ extension GameScene {
                             nodeB.removeFromParent()
                         },
                         .run {
-                            let fruit = FruitManager.shared.createRandomFruit()
+                            self.generateNewFruitFromPosition(position: newFruitPosition)
+                            
                         }
                     
                     ]))
@@ -41,6 +48,16 @@ extension GameScene {
                 
             }
         }
+    }
+    
+    func generateNewFruitFromPosition(position: CGPoint){
+        // setting new fruit
+        let fruit = FruitManager.shared.createRandomFruit()
+        fruit.position = position
+        fruit.physicsBody = SKPhysicsBody(circleOfRadius: fruit.size.height/2)
+        let bitmask = FruitManager.shared.getFruitTexture(by: fruit.name!).bitmask
+        fruit.physicsBody?.categoryBitMask = bitmask
+        fruit.physicsBody?.contactTestBitMask = bitmask
     }
     
     // When the contact ends
