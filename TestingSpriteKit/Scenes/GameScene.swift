@@ -12,6 +12,7 @@ class GameScene: SKScene {
     
     var nowFruit: SKSpriteNode = SKSpriteNode()
     var scoreNode: SKSpriteNode = SKSpriteNode()
+    var groundFruits: [SKSpriteNode] = []
     
     let screen = UIScreen.main.bounds
     
@@ -65,8 +66,7 @@ extension GameScene {
         nowFruit = SKSpriteNode(imageNamed: "grape" )
         nowFruit.position = CGPoint(x: screen.width / 2, y: screen.height - 100)
         nowFruit.setScale(0.5)
-        // Adding physics
-        nowFruit.physicsBody = SKPhysicsBody(circleOfRadius: nowFruit.size.height / 2)
+       
         addChild(nowFruit)
     }
     
@@ -77,6 +77,26 @@ extension GameScene {
     
     // When start touching
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // Making sure there's a touch
+        guard let touch = touches.first else {return}
+        // Getting touch coords
+        let location = touch.location(in: self)
+        // Adding all actions
+        nowFruit.run(.sequence([
+            //move according to the x coord of the touch
+            .moveTo(x: location.x, duration: 0.3),
+            .run {
+                // Adding physics
+                self.nowFruit.physicsBody = SKPhysicsBody(circleOfRadius: self.nowFruit.size.height / 2)
+            },
+                .wait(forDuration: 1),
+            .run {
+                // Adding to the array of fallenfruits
+                self.groundFruits.append(self.nowFruit)
+                // Creating a random fruit
+                self.nowFruit = createRandomFruit()
+            }
+        ]))
         
     }
     
