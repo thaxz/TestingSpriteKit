@@ -61,8 +61,16 @@ class FruitUtil {
         FruitTexture.allCases.first{$0.name == name}!
     }
     
-    func mixFruit(fruitName: String) -> SKSpriteNode {
-        
+    func mixFruit(fruitName: String) -> SKSpriteNode? {
+        let index = mixList.firstIndex{ fruitName == $0.name }
+        if index == nil || index! == mixList.count - 1 {
+            print("fatal error: fruitName not found")
+            return nil
+        }
+        let name = mixList[index! + 1].name
+        let fruit = SKSpriteNode(imageNamed: name)
+        fruit.name = name
+        return fruit
     }
     
 }
