@@ -50,18 +50,22 @@ extension GameScene {
         }
     }
     
-    func generateNewFruitFromPosition(fruitName: String, position: CGPoint){
-        // setting new fruit
-        let fruit = fruitUtil.mixFruit(fruitName: fruitName)
+    func generateNewFruitFromPosition(fruitName: String, position: CGPoint) {
+        // add new Fruit
+        guard let fruit = fruitUtil.mixFruit(fruitName: fruitName) else { return }
+        
         fruit.position = position
         fruit.physicsBody = SKPhysicsBody(circleOfRadius: fruit.size.height/2)
-        let bitmask = fruitUtil.getFruitTexture(by: fruit.name!).bitmask
+        let bitmask = fruitUtil.getFruitTextureByName(fruitName: fruit.name!).bitmask
         fruit.physicsBody?.categoryBitMask = bitmask
         fruit.physicsBody?.contactTestBitMask = bitmask
+        
         addChild(fruit)
-        //animation
+        // animation
         fruit.setScale(0)
         fruit.run(.scale(to: 0.5, duration: 0.3))
+        
+        groundFruits.append(fruit)
     }
     
     // When the contact ends
