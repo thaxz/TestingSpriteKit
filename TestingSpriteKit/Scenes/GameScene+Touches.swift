@@ -24,7 +24,7 @@ extension GameScene {
             .run {
                 // Adding physics
                 self.nowFruit.physicsBody = SKPhysicsBody(circleOfRadius: self.nowFruit.size.height / 2)
-                let bitmask = self.fruitUtil.getFruitTexture(by: self.nowFruit.name!).bitmask
+                let bitmask = self.fruitUtil.getFruitTextureByName(fruitName: self.nowFruit.name!).bitmask
                 
                 self.nowFruit.physicsBody?.categoryBitMask = bitmask
                 self.nowFruit.physicsBody?.contactTestBitMask = bitmask

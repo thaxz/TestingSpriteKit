@@ -57,8 +57,8 @@ class FruitUtil {
          return fruit
     }
     
-    func getFruitTexture(by name: String) -> FruitTexture {
-        FruitTexture.allCases.first{$0.name == name}!
+    func getFruitTextureByName(fruitName: String) -> FruitTexture {
+        FruitTexture.allCases.first{ $0.name == fruitName }!
     }
     
     func mixFruit(fruitName: String) -> SKSpriteNode? {

@@ -39,7 +39,7 @@ extension GameScene {
                             nodeB.removeFromParent()
                         },
                         .run {
-                            self.generateNewFruitFromPosition(fruitName: nodeA.name, position: newFruitPosition)
+                            self.generateNewFruitFromPosition(fruitName: nodeA.name!, position: newFruitPosition)
                             
                         }
                     
