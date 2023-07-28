@@ -39,7 +39,7 @@ extension GameScene {
                             nodeB.removeFromParent()
                         },
                         .run {
-                            self.generateNewFruitFromPosition(position: newFruitPosition)
+                            self.generateNewFruitFromPosition(fruitName: nodeA.name, position: newFruitPosition)
                             
                         }
                     
@@ -50,9 +50,9 @@ extension GameScene {
         }
     }
     
-    func generateNewFruitFromPosition(position: CGPoint){
+    func generateNewFruitFromPosition(fruitName: String, position: CGPoint){
         // setting new fruit
-        let fruit = fruitUtil.createRandomFruit()
+        let fruit = fruitUtil.mixFruit(fruitName: fruitName)
         fruit.position = position
         fruit.physicsBody = SKPhysicsBody(circleOfRadius: fruit.size.height/2)
         let bitmask = fruitUtil.getFruitTexture(by: fruit.name!).bitmask

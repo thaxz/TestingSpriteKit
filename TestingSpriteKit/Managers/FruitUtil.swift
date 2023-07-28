@@ -20,6 +20,20 @@ class FruitUtil {
         FruitTexture.kiwi
     ]
     
+    private let mixList = [
+        FruitTexture.grape,
+        FruitTexture.cherry,
+        FruitTexture.orange,
+        FruitTexture.lemon,
+        FruitTexture.kiwi,
+        FruitTexture.tomato,
+        FruitTexture.peach,
+        FruitTexture.pineapple,
+        FruitTexture.cocount,
+        FruitTexture.halfwatermelon,
+        FruitTexture.watermelon
+    ]
+    
      let screen = UIScreen.main.bounds
     
      func createRandomFruit() -> SKSpriteNode {
@@ -47,6 +61,8 @@ class FruitUtil {
         FruitTexture.allCases.first{$0.name == name}!
     }
     
-    
+    func mixFruit(fruitName: String) -> SKSpriteNode {
+        
+    }
     
 }
