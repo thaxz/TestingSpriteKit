@@ -14,6 +14,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreNode: SKSpriteNode = SKSpriteNode()
     var groundFruits: [SKSpriteNode] = []
     
+    let falldownAudio = AudioUtil(resourceName: "falldown")
+    let winAudio = AudioUtil(resourceName: "win")
+    let bombAudio = AudioUtil(resourceName: "bomb")
+    
+    var ground: SKSpriteNode!
+    
+    var groundCollision = false
+    
     var score: Int = 0 {
         didSet {
             updateScore()

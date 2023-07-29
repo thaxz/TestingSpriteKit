@@ -24,13 +24,15 @@ extension GameScene {
         solid.anchorPoint = CGPoint.zero
         solid.position = CGPoint.zero
         addChild(solid)
-        let ground = SKSpriteNode(color: UIColor.theme.floor, size: CGSize(width: screen.width, height: 10))
+        self.ground = SKSpriteNode(color: UIColor.theme.floor, size: CGSize(width: screen.width, height: 10))
         ground.anchorPoint = CGPoint.zero
         ground.position = CGPoint(x: 0, y: screen.height/5)
         ground.physicsBody = SKPhysicsBody(
             edgeFrom: CGPoint(x: 0, y: ground.size.height),
             to: CGPoint(x: ground.size.width, y: ground.size.height)
         )
+        ground.physicsBody?.categoryBitMask = 0xFFFFFFFF >> 1
+        ground.physicsBody?.contactTestBitMask = 0xFFFFFFFF >> 1
         addChild(ground)
     }
     
