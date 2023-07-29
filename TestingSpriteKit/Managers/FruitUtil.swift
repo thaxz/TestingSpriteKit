@@ -57,6 +57,10 @@ class FruitUtil {
          return fruit
     }
     
+    func getFruitScore(fruitName: String) -> Int {
+        mixList.firstIndex{ $0.name == fruitName }! + 1
+    }
+    
     func getFruitTextureByName(fruitName: String) -> FruitTexture {
         FruitTexture.allCases.first{ $0.name == fruitName }!
     }

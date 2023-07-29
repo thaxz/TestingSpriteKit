@@ -24,6 +24,12 @@ extension GameScene {
                 let nodeA = contact.bodyA.node!
                 let nodeB = contact.bodyB.node!
                 
+                if nodeA.name == FruitTexture.watermelon.name {
+                    return
+                }
+                // update score
+               // if nodeA.name ==
+                
                let newFruitPosition = CGPoint(
                 x: (nodeA.position.x + nodeB.position.x) / 2,
                 y: (nodeA.position.y + nodeB.position.y) / 2
