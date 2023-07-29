@@ -28,7 +28,11 @@ extension GameScene {
                     return
                 }
                 // update score
-               // if nodeA.name ==
+                let score = fruitUtil.getFruitScore(fruitName: nodeA.name!)
+                self.score += score
+                if nodeA.name! == FruitTexture.halfwatermelon.name {
+                    self.score += 100
+                }
                 
                let newFruitPosition = CGPoint(
                 x: (nodeA.position.x + nodeB.position.x) / 2,
