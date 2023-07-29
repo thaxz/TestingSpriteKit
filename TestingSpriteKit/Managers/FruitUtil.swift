@@ -36,7 +36,7 @@ class FruitUtil {
     
      let screen = UIScreen.main.bounds
     
-     func createRandomFruit() -> SKSpriteNode {
+     func randomFruit() -> SKSpriteNode {
          randomCount += 1
          var fruit: SKSpriteNode
          var name: String

@@ -36,7 +36,7 @@ extension GameScene {
                 // Adding to the array of fallenfruits
                 self.groundFruits.append(self.nowFruit)
                 // Creating a random fruit
-                self.nowFruit = self.fruitUtil.createRandomFruit()
+                self.nowFruit = self.fruitUtil.randomFruit()
                 self.addChild(self.nowFruit)
                 self.nowFruit.setScale(0)
                 self.nowFruit.run(.scale(to: 0.5, duration: 0.2))
