@@ -25,10 +25,10 @@ extension GameScene {
                 // Adding physics
                 self.nowFruit.physicsBody = SKPhysicsBody(circleOfRadius: self.nowFruit.size.height / 2)
                 let bitmask = self.fruitUtil.getFruitTextureByName(fruitName: self.nowFruit.name!).bitmask
-                
+
                 self.nowFruit.physicsBody?.categoryBitMask = bitmask
                 self.nowFruit.physicsBody?.contactTestBitMask = bitmask
-                
+
 
             },
                 .wait(forDuration: 1),
@@ -42,8 +42,9 @@ extension GameScene {
                 self.nowFruit.run(.scale(to: 0.5, duration: 0.2))
             }
         ]))
-        
+
     }
+
     
     // When start moving
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

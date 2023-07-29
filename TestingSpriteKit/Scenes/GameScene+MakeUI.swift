@@ -34,11 +34,38 @@ extension GameScene {
         addChild(ground)
     }
     
-    func makeScore(){
-        scoreNode = SKSpriteNode(imageNamed: "number/0")
-        scoreNode.position = CGPoint.init(x: 50, y: screen.height - 100)
-        scoreNode.setScale(0.8)
+    func makeScore() {
+        scoreNode = SKSpriteNode()
+        scoreNode.position = CGPoint(x: 30, y: screen.height - 50)
+        scoreNode.setScale(0.5)
         addChild(scoreNode)
+        
+        updateScore()
+    }
+    
+    func updateScore() {
+        scoreNode.removeAllChildren()
+        
+        var scoreCopy = score
+        var arr: [Int] = []
+        
+        if scoreCopy == 0 {
+            arr.append(0)
+        } else {
+            while scoreCopy != 0 {
+                arr.append(scoreCopy % 10)
+                scoreCopy /= 10
+            }
+        }
+        
+        var cnt = 0
+        while arr.count != 0 {
+            let last = arr.popLast()!
+            let node = SKSpriteNode(imageNamed: "number/\(last)")
+            node.position = CGPoint(x: cnt * 70, y: 0)
+            cnt += 1
+            scoreNode.addChild(node)
+        }
     }
     
     func makeNowFruit(){

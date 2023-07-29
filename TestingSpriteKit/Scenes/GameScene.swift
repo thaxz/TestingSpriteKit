@@ -14,6 +14,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var scoreNode: SKSpriteNode = SKSpriteNode()
     var groundFruits: [SKSpriteNode] = []
     
+    var score: Int = 0 {
+        didSet {
+            updateScore()
+        }
+    }
+    
     var fruitUtil: FruitUtil!
     
     let screen = UIScreen.main.bounds
