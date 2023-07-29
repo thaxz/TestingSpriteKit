@@ -32,6 +32,7 @@ extension GameScene {
                 self.score += score
                 if nodeA.name! == FruitTexture.halfwatermelon.name {
                     self.score += 100
+                    showBonusAnimation()
                 }
                 
                let newFruitPosition = CGPoint(
@@ -83,6 +84,51 @@ extension GameScene {
         
     }
     
+    func showBonusAnimation() {
+        let bonusNode = SKSpriteNode()
+        bonusNode.position = CGPoint(x: screen.width / 2, y: screen.height / 2)
+        
+        let gray = SKSpriteNode(color: UIColor(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.4022575949)),
+                                size: CGSize(width: screen.width,
+                                             height: screen.height))
+        
+        let layer = SKSpriteNode()
+        let watermelon = SKSpriteNode(imageNamed: FruitTexture.watermelon.name)
+        let yellowlight = SKSpriteNode(imageNamed: "yellowlight")
+        
+        
+        watermelon.setScale(0.3)
+        
+        layer.addChild(yellowlight)
+        layer.addChild(watermelon)
+        
+        bonusNode.addChild(gray)
+        bonusNode.addChild(layer)
+    
+        addChild(bonusNode)
+        
+        yellowlight.run(.rotate(byAngle: 30, duration: 30))
+        
+        layer.setScale(0.1)
+        layer.position = CGPoint(x: 0, y: 50)
+        layer.run(.sequence([
+            .scale(to: 1, duration: 0.5),
+            
+            .wait(forDuration: 1),
+            .scale(to: 0, duration: 0.5)
+        ]))
+        layer.run(.sequence([
+            .moveTo(y: 150, duration: 0.1),
+            .moveTo(y: 0, duration: 0.4),
+            .wait(forDuration: 1),
+            .moveTo(y: 500, duration: 0.5),
+            .run {
+                bonusNode.run(.fadeOut(withDuration: 0.1))
+                bonusNode.removeFromParent()
+            }
+        ]))
+        
+    }
     
     
 }
